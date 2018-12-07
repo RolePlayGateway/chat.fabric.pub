@@ -1,4 +1,4 @@
-import {getVectorConfig} from '../getconfig';
+import {getVectorConfig} from '../../src/vector/getconfig';
 
 function onBackToRiotClick() {
     document.cookie = 'mobile_redirect_to_guide=false;path=/';
@@ -8,7 +8,7 @@ function onBackToRiotClick() {
 async function initPage() {
     document.getElementById('back_to_riot_button').onclick = onBackToRiotClick;
 
-    const config = await getVectorConfig('..');
+    const config = await getVectorConfig('../..');
     let hsUrl;
     if (config && config['default_hs_url']) {
         hsUrl = config['default_hs_url'];
